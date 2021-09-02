@@ -1,0 +1,67 @@
+<div *ngIf="palabraEsp.id !== 0" class="divPalabra">
+
+    <mat-card>
+        <mat-card-title>{{palabraEsp.palabra}}</mat-card-title>
+        <mat-card-subtitle>{{palabraEsp.descripcion}}</mat-card-subtitle>
+        <mat-divider inset></mat-divider>
+        <h2>Traducción/es</h2>
+        <mat-card-content>
+            <div *ngFor="let traduccion of traduccionEng">
+                <p routerLink="/palabra/eng/{{traduccion.palabra}}">{{traduccion.palabra}}</p>
+            </div>
+            <div *ngIf="traduccionEng.length === 0">
+                <h3>No hay traducciones disponibles</h3>
+            </div>
+            <mat-divider inset></mat-divider>
+        </mat-card-content>
+        <mat-card-actions>
+            <a mat-button (click)="openDialogActualizarEsp()">Editar</a>
+            <a mat-button (click)="openDialogBorrarEsp()">Borrar</a>
+            <a mat-button routerLink="/listaPalabras">Lista Palabras</a>
+        </mat-card-actions>
+      </mat-card>
+</div>
+
+<div *ngIf="palabraEng.id !== 0" class="divPalabra">
+
+    <mat-card>
+        <mat-card-title>{{palabraEng.palabra}}</mat-card-title>
+        <mat-divider inset></mat-divider>
+        <h2>Traducción</h2>
+        <mat-card-content>
+
+            <div>
+                <p routerLink="/palabra/esp/{{palabraEng.palabraEspanol}}">{{palabraEng.palabraEspanol}}</p>
+            </div>
+            <div>
+                <mat-card-subtitle>{{palabraEng.espanolSimpleOutputDto.descripcion}}</mat-card-subtitle>
+            </div>
+            <div *ngFor="let traduccion of traduccionEng">
+                <p routerLink="/palabra/esp/{{traduccion.palabra}}">{{traduccion.palabra}}</p>
+            </div>
+            <div *ngIf="traduccionEng.length === 0">
+                <h3>No hay traducciones disponibles</h3>
+            </div>
+            <mat-divider inset></mat-divider>
+        </mat-card-content>
+        <mat-card-actions>
+            <a mat-button (click)="openDialogActualizarEng()">Editar</a>
+            <a mat-button (click)="openDialogBorrarEng()">Borrar</a>
+            <a mat-button routerLink="/listaPalabras">Lista Palabras</a>
+        </mat-card-actions>
+      </mat-card>
+</div>
+
+<div class="divPalabra" *ngIf="palabraEsp.id === 0 && palabraEng.id === 0">
+    <mat-card>
+    <h1>No existe la palabra: <b>{{palabra}}</b></h1>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+        <a mat-button  routerLink="/listaPalabras">Lista Palabras</a>
+    </mat-card-actions>
+    </mat-card>
+</div>
+
+
+
+

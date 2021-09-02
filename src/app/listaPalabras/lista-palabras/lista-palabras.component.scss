@@ -1,0 +1,49 @@
+.navbarLista{
+    display: flex;
+    overflow: hidden;
+    background-color: #A6998A;
+
+    img{
+        padding: 14px 18px;
+    }
+    
+    a{
+        margin-left: 30%;
+        margin-top: 10%;
+    }
+
+    h2{
+        padding-top: 12px;
+        font-weight: bold;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+.columnaListaPalabras{
+    display: block;
+    align-content: flex-start;
+    width: 50%;
+}
+
+.containerLista{
+    display: flex;
+    height: auto;
+}
+
+.container{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40%;
+}
+
+::ng-deep.mat-raised-button {
+    background-color: #59040C;
+    color: white;
+}
+
+::ng-deep.mat-raised-button :hover {
+    font-size: 14.3px;
+  }

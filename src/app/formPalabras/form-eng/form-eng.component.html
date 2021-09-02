@@ -1,0 +1,39 @@
+<h1 *ngIf="data.palabra === undefined">Añadir palabra Inglés</h1>
+<form action="" [formGroup]="formEng" *ngIf="data.palabra === undefined">
+  <div mat-dialog-content>
+    <div>
+    <mat-form-field class="formField" appearance="fill">
+      <mat-label>Palabra</mat-label>
+        <input matInput formControlName="palabra">
+        <mat-error>Debes introducir un valor</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="formField" appearance="fill">
+        <mat-label>Traducción Español</mat-label>
+        <input matInput formControlName="palabraEspanol">
+        <mat-error>Debes introducir un valor</mat-error>
+      </mat-form-field>
+    </div>
+  </div>    
+  <div mat-dialog-actions>
+    <button mat-button (click)="cerrar()">Cerrar</button>
+    <button mat-button (click)="anadirPalabraEng()" cdkFocusInitial>Añadir</button>
+  </div>
+</form>
+<h1 *ngIf="data.palabra !== undefined">Actualizar: <b>{{data.palabra}}</b></h1>
+<form action="" [formGroup]="formEng" *ngIf="data.palabra !== undefined">
+  <div mat-dialog-content>
+    <div>
+      <mat-form-field class="formField" appearance="fill">
+        <mat-label>Traducción Español</mat-label>
+        <input matInput formControlName="palabraEspanol">
+        <mat-error>Debes introducir un valor</mat-error>
+      </mat-form-field>
+    </div>
+  </div>    
+  <div mat-dialog-actions>
+    <button mat-button (click)="cerrar()">Cerrar</button>
+    <button mat-button (click)="actualizarPalabraEng()" cdkFocusInitial>Actualizar</button>
+  </div>
+</form>

@@ -1,0 +1,45 @@
+.divFormBusqueda{
+    //background-color: blue;
+    display: inline-flex;
+}
+
+.fieldAuto{
+    height: 100%;
+}
+
+.containerAuto{
+    display: flex;
+}
+
+.divFieldAuto{
+    width: 40rem;
+}
+
+.divFieldAuto{
+.mat-form-field{
+    width: 95%;
+    margin-right: 2%;
+}}
+
+ ::ng-deep .mat-focused .mat-form-field-label {
+  color: #8C0712 !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  background-color: #8C0712 !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+ background-color: #8C0712 !important;;
+}
+
+.mat-color {
+    background-color: #59040C;
+}
+
+::ng-deep.mat-option{
+    color: #8C0712;
+}
+::ng-deep.mat-active{
+    color: #8C0712;
+}

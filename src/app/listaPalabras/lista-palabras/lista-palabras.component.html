@@ -1,0 +1,53 @@
+<div class="containerLista">
+    <div class="columnaListaPalabras">
+            <div class="navbarLista">
+                <div>
+                    <img src="assets/espana.png">
+                </div>
+                <div>
+                    <h2>Español</h2> 
+                </div>
+                <div>
+                    <a mat-raised-button color="color" (click)="openDialogAnadirEsp()">Añadir Palabra</a>
+                </div>
+            </div>
+            <div>
+                <ul>
+                    <div class="container">
+                        <li *ngFor="let palabra of palabrasEsp">
+                            <app-palabra 
+                            [palabraEsp]="palabra"
+                            ></app-palabra>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+    </div>
+    <mat-divider [vertical]="true"></mat-divider>
+    <div class="columnaListaPalabras">
+        <div class="navbarLista">
+            <div>
+                <img src="assets/reino-unido.png">
+            </div>
+            <div>
+                <h2>Inglés</h2> 
+            </div>
+            <div>
+                <a mat-raised-button (click)="openDialogAnadirEng()">Añadir Palabra</a>
+            </div>
+        </div>
+            <div>
+                <ul>
+                    <div class="container">
+                        <li *ngFor="let palabra of palabrasEng">
+                            <app-palabra 
+                            [palabraEng]="palabra"
+                            ></app-palabra>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+    </div>
+</div>
+
+

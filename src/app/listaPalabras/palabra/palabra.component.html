@@ -1,0 +1,19 @@
+<mat-card *ngIf="palabraEsp.palabra">
+    <mat-card-title routerLink="/palabra/esp/{{palabraEsp.palabra}}"><p>{{palabraEsp.palabra}}</p></mat-card-title>
+    <mat-card-subtitle routerLink="/palabra/esp/{{palabraEsp.palabra}}"><p>{{palabraEsp.descripcion}}</p></mat-card-subtitle>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+        <a mat-button *ngIf="palabraEsp.palabra" (click)="openDialogActualizarEsp()">Editar</a>
+        <a mat-button *ngIf="palabraEsp.palabra" (click)="openDialogBorrarEsp()">Borrar</a>
+    </mat-card-actions>
+</mat-card>
+
+<mat-card *ngIf="palabraEng.palabra">
+    <mat-card-title routerLink="/palabra/eng/{{palabraEng.palabra}}"><p>{{palabraEng.palabra}}</p></mat-card-title>
+    <mat-card-subtitle routerLink="/palabra/eng/{{palabraEng.palabra}}"><p>{{palabraEng.palabraEspanol}}</p></mat-card-subtitle>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+        <a mat-button *ngIf="palabraEng.palabra" (click)="openDialogActualizarEng()">Editar</a>
+        <a mat-button *ngIf="palabraEng.palabra" (click)="openDialogBorrarEng()">Borrar</a>
+    </mat-card-actions>
+</mat-card>

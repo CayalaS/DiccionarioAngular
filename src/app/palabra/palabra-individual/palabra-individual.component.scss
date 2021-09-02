@@ -1,0 +1,46 @@
+.divPalabra{
+    width: 33%;
+    margin-left: 33%;
+    margin-top: 5%;
+}
+
+.mat-card{
+    background-color: #F2EBDF;
+    margin-bottom: 3%;
+}
+
+.mat-card-title{
+    color: #8C0712;
+}
+
+.mat-card-title p:hover{
+    color: #F22E52;
+    cursor: pointer;
+}
+
+.mat-card-subtitle p:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.mat-button{
+    background-color: #59040C;
+    color: white;
+}
+
+p{
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 16.5px;
+}
+
+p:hover{
+    font-size: 15.5px;
+    color: #8C0712;
+    cursor: pointer;
+}
+
+b{
+    color: #8C0712;
+}
+
