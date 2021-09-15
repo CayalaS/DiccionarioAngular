@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FormEspComponent } from 'src/app/formPalabras/form-esp/form-esp.component';
 import { DialogBorrarComponent } from 'src/app/formPalabras/dialog-borrar/dialog-borrar.component';
 import { FormEngComponent } from 'src/app/formPalabras/form-eng/form-eng.component';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-palabra-individual',
@@ -54,6 +55,8 @@ export class PalabraIndividualComponent implements OnInit {
       fechaAlta: new Date(),
       fechaModificacion: new Date()
     }
+
+    prueba: any;
   
 
   palabra = String(this.route.snapshot.paramMap.get('palabra'));
@@ -62,7 +65,8 @@ export class PalabraIndividualComponent implements OnInit {
     private inglesService: InglesService,
     private route: ActivatedRoute,
     public router: Router,
-    public dialog: MatDialog,) { }
+    public dialog: MatDialog,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     //Compruebo que parametro de idioma se esta pasando y cargo la palabra
@@ -83,7 +87,15 @@ export class PalabraIndividualComponent implements OnInit {
 
   //Creo los metodos que llaman al servicio y cargan la palabra
   cargarPalabraEsp(): void {
-    if (this.palabra != null) {
+
+    this.palabraEsp = this.activatedRoute.snapshot.data.palabra;
+    this.traduccionEng =  this.palabraEsp.palabrasIngles;
+    console.log(this.palabraEsp);
+    console.log(this.traduccionEng);
+    if (this.traduccionEng === undefined) {
+      this.palabraEsp.id = 0;
+    }
+    /*if (this.palabra != null) {
       this.espanolService.cargarPalabraEsp(this.palabra)
       .subscribe(valor =>{  
 
@@ -92,12 +104,17 @@ export class PalabraIndividualComponent implements OnInit {
       console.log(this.traduccionEng);
 
       });
-    }    
+    }   */ 
   }
 
   cargarPalabraEng(): void {
-    
-    if (this.palabra != null) {
+    this.traduccionEng = 0;
+    console.log("entra")
+    this.palabraEng = this.activatedRoute.snapshot.data.palabra;
+    if (this.palabraEng.id === undefined) {
+      this.palabraEng.id = 0;
+    }
+    /*if (this.palabra != null) {
       this.inglesService.cargarPalabraEng(this.palabra)
       .subscribe(valor =>{  
       
@@ -105,7 +122,7 @@ export class PalabraIndividualComponent implements OnInit {
       console.log(valor);
 
       });
-    }    
+    } */ 
   }
 
   openDialogActualizarEsp() {

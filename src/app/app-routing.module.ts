@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CompruebaLoginGuard } from './guards/comprueba-login.guard';
 
 
 const routes: Routes = [
@@ -9,7 +10,8 @@ const routes: Routes = [
   },
   {
     path: 'listaPalabras', 
-    loadChildren: () => import('./listaPalabras/lista-palabras.module').then(m => m.ListaPalabrasModule)
+    loadChildren: () => import('./listaPalabras/lista-palabras.module').then(m => m.ListaPalabrasModule),
+    canActivate: [CompruebaLoginGuard]
   },
   {
     path: 'palabra', 
@@ -24,6 +26,11 @@ const routes: Routes = [
   {
     path: 'editar', 
     loadChildren: () => import('./formPalabras/form-palabras.module').then(m => m.FormPalabrasModule)
+  }
+  ,
+  {
+    path: 'login', 
+    loadChildren: () => import('./auth/login.module').then(m => m.LoginModule)
   }
 ];
 

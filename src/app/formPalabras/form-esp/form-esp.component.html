@@ -17,8 +17,8 @@
     </div>
   </div>    
   <div mat-dialog-actions>
-    <button mat-button (click)="cerrar()">Cerrar</button>
     <button mat-button (click)="anadirPalabraEsp()" cdkFocusInitial>Añadir</button>
+    <button mat-button (click)="cerrar()">Cerrar</button>
   </div>
 </form>
 
@@ -34,8 +34,7 @@
     </div>
   </div>    
   <div mat-dialog-actions>
-    <button mat-button (click)="cerrar()">Cerrar</button>
-    <button mat-button *ngIf="data.palabra === undefined" (click)="anadirPalabraEsp()" cdkFocusInitial>Añadir</button>
     <button mat-button *ngIf="data.palabra !== undefined" (click)="actualizarPalabraEsp()" cdkFocusInitial>Actualizar</button>
+    <button mat-button (click)="cerrar()">Cerrar</button>
   </div>
 </form>

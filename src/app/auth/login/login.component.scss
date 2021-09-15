@@ -1,0 +1,31 @@
+.loginForm{
+    padding: 4rem 1rem;
+
+    mat-card {
+        max-width: 300px;
+        margin: 2rem auto;
+        text-align: center;
+        height: 250px;
+    }
+
+    .full-width-input{
+        width: 100%;
+    }
+
+    button{
+        width: 100%;
+    }
+
+    .separator {
+        margin-bottom: 2rem;
+    }
+}
+
+::ng-deep.mat-raised-button {
+    background-color: #59040C;
+    color: white;
+}
+
+::ng-deep.mat-raised-button :hover {
+    font-size: 14.3px;
+  }

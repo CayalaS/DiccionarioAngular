@@ -8,7 +8,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
-  {path: '**', component: InicioComponent},
+  {path: '**', redirectTo: ''},
 ];
 
 @NgModule({

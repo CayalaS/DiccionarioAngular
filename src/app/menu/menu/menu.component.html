@@ -1,4 +1,10 @@
 <div class="navbar">
     <a routerLink="/inicio" routerLinkActive="a-active"><img src="assets/open-book.png"></a>
     <a routerLink="/listaPalabras" routerLinkActive="a-active">Lista Palabras</a>
+    <div class="login">
+        <ng-template #login>
+            <a routerLink="/login">Login</a>
+        </ng-template>
+        <a (click)="onLogout()" *ngIf="authService.isLogged | async else login">Logout</a>
+    </div>
 </div>

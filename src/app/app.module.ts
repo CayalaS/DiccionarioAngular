@@ -10,11 +10,14 @@ import { MenuModule } from './menu/menu.module';
 import { InicioModule } from './inicio/inicio.module';
 import { ListaPalabrasModule } from './listaPalabras/lista-palabras.module';
 import { PalabraModule } from './palabra/palabra.module';
+import { LoginModule } from './auth/login.module';
+import { LoaderComponent } from './loader/loader.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { PalabraModule } from './palabra/palabra.module';
     InicioModule,
     HttpClientModule,
     ListaPalabrasModule,
-    PalabraModule
+    PalabraModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
